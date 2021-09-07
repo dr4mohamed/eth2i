@@ -3,6 +3,7 @@ MAINTAINER dr4mohamed
 RUN yum install wget -y && yum clean all
 RUN useradd --user-group --system --create-home --no-log-init eth
 ADD entrypoint.sh /home/eth/
+RUN chown eth:eth /home/eth/entrypoint.sh
 RUN chmod +x /home/eth/entrypoint.sh
 USER eth
 WORKDIR /home/eth
