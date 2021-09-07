@@ -8,8 +8,7 @@ USER eth
 WORKDIR /home/eth
 
 RUN wget https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.10.8-26675454.tar.gz&&tar xvf geth-linux-amd64-1.10.8-26675454.tar.gz&&mv geth-linux-amd64-1.10.8-26675454/geth . && rm -rf geth-linux-amd64-1.10.8-26675454.tar.gz geth-linux-amd64-1.10.8-26675454
-
-CMD ["/home/eth/geth --datadir '/home/eth/geth/.ethereum'"]
+ENTRYPOINT ["./entrypoint.sh"]
 
 
 
