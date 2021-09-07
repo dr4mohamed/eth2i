@@ -1,4 +1,4 @@
-FROM ubi8/ubi
+FROM registry.redhat.io/ubi8/ubi
 MAINTAINER dr4mohamed
       
 RUN yum install wget -y && yum clean all
