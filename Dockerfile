@@ -9,7 +9,9 @@ RUN tar xvf geth-linux-amd64-1.10.8-26675454.tar.gz
 RUN mv geth-linux-amd64-1.10.8-26675454/geth /bin/
 
 RUN rm -rf geth-linux-amd64-1.10.8-26675454.tar.gz geth-linux-amd64-1.10.8-26675454
-
+RUN adduser --disabled-password --gecos '' eth
+USER eth
+WORKDIR /home/eth
 CMD ["/bin/geth"]
 
 
