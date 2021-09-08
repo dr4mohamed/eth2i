@@ -1,7 +1,8 @@
 FROM registry.access.redhat.com/ubi8/ubi
 MAINTAINER dr4mohamed
 RUN yum install wget -y && yum clean all
-RUN chgrp -R 0 /blockchain && \
+RUN mkdir /blockchain && \
+    chgrp -R 0 /blockchain && \
     chmod -R g+rwX /blockchain
 WORKDIR /blockchain
 ADD entrypoint.sh .
