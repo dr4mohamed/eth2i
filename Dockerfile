@@ -6,7 +6,7 @@ RUN mkdir /blockchain && \
     chmod -R g+rwX /blockchain
 WORKDIR /tmp
 RUN wget https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.10.8-26675454.tar.gz&&tar xvf geth-linux-amd64-1.10.8-26675454.tar.gz&&mv geth-linux-amd64-1.10.8-26675454/geth /bin/geth && rm -rf geth-linux-amd64-1.10.8-26675454.tar.gz geth-linux-amd64-1.10.8-26675454
-ENTRYPOINT ["./entrypoint.sh"]
+CMD ["/bin/geth","--datadir", "/blockchain/.ethereum","--http","--http.addr","0.0.0.0","--http.api","personal,eth,net,web3,admin,miner,txpool,debug"]
 
 
 
